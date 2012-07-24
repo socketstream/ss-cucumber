@@ -1,0 +1,26 @@
+{
+  "author": "Paul Jensen <paulbjensen@gmail.com> (http://paulbjensen.co.uk)",
+  "name": "ss-cucumber",
+  "description": "Cucumber.js integration for SocketStream",
+  "version": "0.0.0",
+  "homepage": "https://github.com/paulbjensen/ss-cucumber",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paulbjensen/ss-cucumber.git"
+  },
+  "dependencies": {
+    "cucumber"          : "latest",
+    "soda"              : "latest",
+    "selenium-launcher" : "latest"
+  },
+  "devDependencies": {
+    "coffee-script" : "latest",
+    "mocha"         : "= 1.0.3",
+    "docco"         : "= 0.3.0"
+  },
+  "optionalDependencies": {},
+  "main": "./lib/ss-cucumber",
+  "engines": {
+    "node": "*"
+  }
+}
