@@ -14,7 +14,9 @@ build = (watch, callback) ->
   coffee.stderr.on 'data', (data) -> print data.toString()
   coffee.on 'exit', (status) -> callback?() if status is 0
 
-files = []
+files = [
+  "ss-cucumber.coffee"
+]
 
 buildDocs = (callback) ->
   for file in files
