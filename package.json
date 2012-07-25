@@ -16,7 +16,9 @@
   "devDependencies": {
     "coffee-script" : "latest",
     "mocha"         : "= 1.0.3",
-    "docco"         : "= 0.3.0"
+    "docco"         : "= 0.3.0",
+    "socketstream"  : "= 0.3.0RC2",
+    "rimraf"        : "latest"
   },
   "optionalDependencies": {},
   "main": "./lib/ss-cucumber",
