@@ -11,7 +11,7 @@
   "dependencies": {
     "cucumber"          : "latest",
     "soda"              : "latest",
-    "selenium-launcher" : "latest",
+    "selenium-launcher" : "git://github.com/paulbjensen/nodejs-selenium-launcher.git",
     "commander"         : "latest"
   },
   "devDependencies": {
