@@ -29,7 +29,7 @@ And run:
 
     cucumber.js
 
-This will cucumber.js against your application via a selenium client. For more information behind all of this, see [my blog post](http://paulbjensen.co.uk/posts/2012/07/24/testing-socketstream-apps-with-cucumber).
+This will run cucumber.js against your application via a selenium client. For more information behind all of this, see [my blog post](http://paulbjensen.co.uk/posts/2012/07/24/testing-socketstream-apps-with-cucumber).
 
 Step definitions available
 ---
