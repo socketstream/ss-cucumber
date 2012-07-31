@@ -10,7 +10,7 @@ program
   .parse(process.argv);
 
 if (program.args[0] == "init") {
-  ssCucumber.init(__dirname, function(){
-    console.log("Setting up cucumber with your SocketStream app.");
+  ssCucumber.init(process.env["PWD"], function(){
+    console.log("Your SocketStream app is now setup to use Cucumber.");
   });
 };
