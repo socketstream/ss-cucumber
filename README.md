@@ -17,8 +17,6 @@ To seed your SocketStream application with the files and folders required for us
     ss-cucumber init
 
 
-You'll want to edit the support/world.js and replace INSERT_URL_HERE with the url at which your Socketstream application loads (i.e. http://localhost:3000).
-
 You'll notice a socketstream_steps.js file in the step_definitions directory. This provides a list of step definitions to use with your application out of the box. You can create feature files that use these steps to drive the selenium browser.
 
 If you haven't got cucumber.js installed already:
@@ -41,6 +39,14 @@ Step definitions available
 * I should see "web page text"
 
 There will be more added over time. This is just a start for now. If you have any that you'd like to see, send me a message, or feel free to fork this branch and make a pull request.
+
+CoffeeScript support
+---
+
+If you want your world.js and socketstream_steps.js files in CoffeeScript format instead, simply pass this option:
+
+    cd [socketstream app directory]
+    ss-cucumber init -c
 
 License & Credits
 ---

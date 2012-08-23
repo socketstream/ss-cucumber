@@ -3,7 +3,7 @@ var wrap = function (funk, cb) {
     if (err == null || err == undefined){
       cb();
     } else {
-      cb.fail(throw(err));
+      cb.fail(err);
     };
   });
 };
@@ -17,22 +17,23 @@ module.exports = function (){
   });
 
   this.Given(/^I follow "([^"]*)"$/, function (link, callback) {
-    wrap(this.browser.chain.click("link=#{link}"), callback);
+    wrap(this.browser.chain.click("link=" + link), callback);
   })
 
   this.When(/^I fill in "([^"]*)" with "([^"]*)"$/, function (field, value, callback) {
     wrap(this.browser.chain
-    .fireEvent("//input[@name=\"#{field}\"]",'focus')
-    .type("//input[@name=\"#{field}\"]", value)
-    .fireEvent("//input[@name=\"#{field}\"]",'keyup')
-    .fireEvent("//input[@name=\"#{field}\"]",'blur')
-    , callback);
+      .fireEvent("//input[@name=\"" + field + "\"]",'focus')
+      .type("//input[@name=\""      + field + "\"]", value)
+      .fireEvent("//input[@name=\"" + field + "\"]",'keyup')
+      .fireEvent("//input[@name=\"" + field + "\"]",'blur')
+      , callback
+    );
   });
 
   this.When(/^I press "([^"]*)"$/, function (name, callback){
     wrap(this.browser.chain
-    .fireEvent("//button[text()=\"#{name}\"]",'focus')
-    .click("//button[text()=\"#{name}\"]")
+    .fireEvent("//button[text()=\"" + name + "\"]",'focus')
+    .click("//button[text()=\"" + name + "\"]")
     , callback);
   });
 

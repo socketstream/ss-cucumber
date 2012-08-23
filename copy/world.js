@@ -1,15 +1,15 @@
+process.env["SS_ENV"] = "cucumber";
+var selenium          = require('../../node_modules/ss-cucumber/node_modules/selenium-launcher');
+var soda              = require('../../node_modules/ss-cucumber/node_modules/soda');
+var app               = require('../../app');
+
 var World = function(callback){
   
-  process.env["SS_ENV"] = "cucumber";
-  var selenium          = require('selenium-launcher');
-  var soda              = require('soda');
-  var app               = require('../../app');
-
   selenium(function(err,selenium){
     this.browser = soda.createClient({
       host:     selenium.host,
       port:     selenium.port,
-      url:      "INSERT_URL_HERE",
+      url:      "http://localhost:3000",
       browser:  "firefox"
     });
     callback({browser: this.browser});

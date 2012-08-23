@@ -16,7 +16,7 @@ describe "ss-cucumber", ->
         path = __dirname.replace("/test",'/'+appName)
         fs.exists path, (exists) ->
           if exists?
-            ssCucumber.init __dirname.replace("/test",'/'+appName), ->
+            ssCucumber.init __dirname.replace("/test",'/'+appName), false, ->
               done()
       , 1
 
@@ -49,9 +49,6 @@ describe "ss-cucumber", ->
             assert copiedFile == originalFile 
             done()
 
-    # NOTE - maybe we just call 'app', and that's all we need to do?
-    it "should identify if the main Socketstream app file exists, and what file type it is"
-
     it "should create a socketstream_steps.js file inside of the step_definitions folder", (done) ->
       file = "#{__dirname.replace('/test','/'+appName)}/features/step_definitions/socketstream_steps.js"
       fs.exists file, (exists) ->
@@ -60,7 +57,36 @@ describe "ss-cucumber", ->
             assert copiedFile == originalFile 
             done()
 
+  describe "#init with coffee option", ->
 
-  describe "#run", ->
+    before (done) ->
+      ssGenerator.generate args: ["n", appName]
+      setTimeout ->
+        path = __dirname.replace("/test",'/'+appName)
+        fs.exists path, (exists) ->
+          if exists?
+            ssCucumber.init __dirname.replace("/test",'/'+appName), true, ->
+              done()
+      , 1
 
-    it "should run Cucumber against the set of features inside of the features folder"
+    after (done) ->
+      rimraf appName, (err) ->
+        throw(new Error(err)) if err?
+        done()
+
+    it "should create a world.coffee file inside of the support folder", (done) ->
+      file = "#{__dirname.replace('/test','/'+appName)}/features/support/world.coffee"
+      fs.exists file, (exists) ->
+        assert exists
+        fs.readFile file, 'utf8', (err, copiedFile) ->
+          fs.readFile "#{__dirname}/../copy/world.coffee", 'utf8', (err, originalFile) ->
+            assert copiedFile == originalFile 
+            done()
+
+    it "should create a socketstream_steps.coffee file inside of the step_definitions folder", (done) ->
+      file = "#{__dirname.replace('/test','/'+appName)}/features/step_definitions/socketstream_steps.coffee"
+      fs.exists file, (exists) ->
+        fs.readFile file, 'utf8', (err, copiedFile) ->
+          fs.readFile "#{__dirname}/../copy/socketstream_steps.coffee", 'utf8', (err, originalFile) ->
+            assert copiedFile == originalFile 
+            done()
