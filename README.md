@@ -1,6 +1,8 @@
 ss-cucumber
 ===========
 
+[![Build Status](https://travis-ci.org/Anephenix/ss-cucumber.png)](https://travis-ci.org/Anephenix/ss-cucumber)
+
 Cucumber.js integration for SocketStream
 
 Installation
