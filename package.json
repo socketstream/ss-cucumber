@@ -18,7 +18,7 @@
     "coffee-script" : "latest",
     "mocha"         : "= 1.0.3",
     "docco"         : "= 0.3.0",
-    "socketstream"  : ">= 0.3.*",
+    "socketstream"  : ">= 0.3.2",
     "rimraf"        : "latest"
   },
   "main": "./lib/ss-cucumber",
