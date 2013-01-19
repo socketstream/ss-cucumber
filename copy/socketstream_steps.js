@@ -41,4 +41,15 @@ module.exports = function (){
     wrap(this.browser.chain.assertTextPresent(content), callback);
   });
 
+  // If you need to do something like clean/seed the database,
+  // put the code here, then callback() when done.
+  this.Before(function(callback){
+    callback();    
+  });
+
+  // This will close the selenium browser at the end of the cucumber feature
+  this.After(function(callback){
+    wrap(this.browser.chain.testComplete(), callback);
+  });
+
 };

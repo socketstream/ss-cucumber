@@ -31,3 +31,12 @@ module.exports = ->
 
   @Then /^I should see "([^"]*)"$/, (content, callback) ->
     wrap @browser.chain.assertTextPresent(content), callback
+
+  # If you need to do something like clean/seed the database,
+  # put the code here, then callback() when done.
+  @Before (callback) ->
+    callback()
+
+  # This will close the selenium browser at the end of the cucumber feature
+  @After (callback) ->
+    wrap @browser.chain.testComplete(), callback

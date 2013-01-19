@@ -2,11 +2,11 @@
   "author": "Paul Jensen <paulbjensen@gmail.com> (http://paulbjensen.co.uk)",
   "name": "ss-cucumber",
   "description": "Cucumber.js integration for SocketStream",
-  "version": "0.0.4",
-  "homepage": "https://github.com/paulbjensen/ss-cucumber",
+  "version": "0.0.5",
+  "homepage": "https://github.com/Anephenix/ss-cucumber",
   "repository": {
     "type": "git",
-    "url": "git://github.com/paulbjensen/ss-cucumber.git"
+    "url": "git://github.com/Anephenix/ss-cucumber.git"
   },
   "dependencies": {
     "cucumber"          : "latest",
