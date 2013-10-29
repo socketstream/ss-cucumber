@@ -2,6 +2,7 @@ ss-cucumber
 ===========
 
 [![Build Status](https://travis-ci.org/Anephenix/ss-cucumber.png)](https://travis-ci.org/Anephenix/ss-cucumber)
+[![Code Climate](https://codeclimate.com/repos/526feb7ef3ea00394b0072c4/badges/391b079bac785086a765/gpa.png)](https://codeclimate.com/repos/526feb7ef3ea00394b0072c4/feed)
 
 Cucumber.js integration for SocketStream
 
